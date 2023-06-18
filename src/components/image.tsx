@@ -15,7 +15,6 @@ const useImage = (src: string) => {
         setIsLoading(false);
     };
     image.onerror = (e) => {
-        console.error(e);
         setIsLoading(false);
         setError('Failed to load image');
     };

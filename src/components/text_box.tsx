@@ -3,9 +3,8 @@ import React from "react";
 const TextBox: React.FC<{ text: string, type: string }> = (props) => {
     return (
         <>
-            {props.type === "p" ?
-            <p>{props.text}</p> : <h1>{props.text}</h1>
-            }
+            {props.type === "title" && <h1>{props.text}</h1>}
+            {props.type === "text" && <p>{props.text}</p>}
         </>
     );
 }
