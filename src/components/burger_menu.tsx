@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const BurgerMenu: React.FC = () => {
+const BurgerMenu: React.FC = () => {
     const [M, setM] = useState((window as any).M);
 
     useEffect(() => {
@@ -32,14 +32,17 @@ export const BurgerMenu: React.FC = () => {
               </div>
             </li> */}
             <li><a className="subheader">The Vending Supplier</a></li>
-            <li><a href="#!"><span className="material-icons">shopping_cart</span>Browse Shop</a></li>
-            <li><a href="#!"><span className="material-icons">local_shipping</span>Order</a></li>
+            <li><a href="/"><span className="material-icons">home</span>Homepage</a></li>
+            <li><a href="/shop"><span className="material-icons">shopping_cart</span>Browse Shop</a></li>
+            <li><a href="/cart"><span className="material-icons">local_shipping</span>Order</a></li>
             <li><div className="divider"></div></li>
-            <li><a className="waves-effect" href="#!">About Us</a></li>
-            <li><a className="waves-effect" href="#!">Contact Us</a></li>
+            <li><a href="/about-us" className="waves-effect">About Us</a></li>
+            <li><a href="/contact-us" className="waves-effect">Contact Us</a></li>
           </ul>
           <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
         </nav>
       </div>
       );
 }
+
+export default BurgerMenu;
