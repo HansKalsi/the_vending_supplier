@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const GenericButton: React.FC = () => {
+export const GenericButton: React.FC<{ label: string }> = props => {
   return (
     <button className="btn waves-effect waves-light" type="button">
-      Contact Us
+      {props.label}
     </button>
   );
 };

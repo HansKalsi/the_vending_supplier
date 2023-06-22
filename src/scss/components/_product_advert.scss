@@ -1,0 +1,27 @@
+.product_list {
+  .row {
+    display: flex;
+  }
+
+  @media (max-width: 992px) {
+    .row {
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.product_advert {
+  text-align: center;
+  border: solid 1px black;
+  height: 100%;
+
+  img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}

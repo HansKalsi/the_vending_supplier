@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Page } from '../../../App';
 
-const DesktopNav: React.FC = () => {
+const DesktopNav: React.FC<{
+  activePage: string;
+  setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;
+}> = props => {
   const [M, setM] = useState((window as any).M);
-  const location = useLocation();
-  const pathSegments = location.pathname.split('/');
 
   useEffect(() => {
     // Initialize the tabs
@@ -20,49 +21,58 @@ const DesktopNav: React.FC = () => {
     };
   }, []);
 
+  const handlePageChange = (page: Page): void => {
+    props.setCurrentPage(page);
+  };
+
   return (
     <ul className="tabs tabs-fixed-width">
       <li className="tab">
         <a
-          target="_self"
-          href="/"
-          className={pathSegments[1] === '' ? 'active' : ''}
+          onClick={() => {
+            handlePageChange('home');
+          }}
+          className={props.activePage === '' ? 'active' : ''}
         >
           Home
         </a>
       </li>
       <li className="tab">
         <a
-          target="_self"
-          href="/about"
-          className={pathSegments[1] === 'about' ? 'active' : ''}
+          onClick={() => {
+            handlePageChange('about');
+          }}
+          className={props.activePage === 'about' ? 'active' : ''}
         >
           About Us
         </a>
       </li>
       <li className="tab">
         <a
-          target="_self"
-          href="/contact"
-          className={pathSegments[1] === 'contact' ? 'active' : ''}
+          onClick={() => {
+            handlePageChange('contact');
+          }}
+          className={props.activePage === 'contact' ? 'active' : ''}
         >
           Contact Us
         </a>
       </li>
       <li className="tab">
         <a
-          target="_self"
-          href="/shop"
-          className={pathSegments[1] === 'shop' ? 'active' : ''}
+          onClick={() => {
+            handlePageChange('browse');
+          }}
+          className={props.activePage === 'shop' ? 'active' : ''}
         >
           Shop
         </a>
       </li>
       <li className="tab">
         <a
-          target="_self"
-          href="/cart"
-          className={pathSegments[1] === 'cart' ? 'active' : ''}
+          onClick={() => {
+            handlePageChange('cart');
+          }}
+          className={props.activePage === 'cart' ? 'active' : ''}
         >
           Order
         </a>

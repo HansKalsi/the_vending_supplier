@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Page } from '../../../App';
 
-const BurgerMenu: React.FC = () => {
+const BurgerMenu: React.FC<{
+  activePage: string;
+  setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;
+}> = props => {
   const [M, setM] = useState((window as any).M);
 
   useEffect(() => {
@@ -17,6 +21,10 @@ const BurgerMenu: React.FC = () => {
     };
   }, []);
 
+  const handlePageChange = (page: Page): void => {
+    props.setCurrentPage(page);
+  };
+
   return (
     <>
       <ul id="slide-out" className="sidenav">
@@ -24,17 +32,32 @@ const BurgerMenu: React.FC = () => {
           <a className="subheader">The Vending Supplier</a>
         </li>
         <li>
-          <a href="/">
+          <a
+            onClick={() => {
+              handlePageChange('home');
+            }}
+            className={props.activePage === '' ? 'active' : ''}
+          >
             <span className="material-icons">home</span>Homepage
           </a>
         </li>
         <li>
-          <a href="/shop">
+          <a
+            onClick={() => {
+              handlePageChange('browse');
+            }}
+            className={props.activePage === 'shop' ? 'active' : ''}
+          >
             <span className="material-icons">shopping_cart</span>Browse Shop
           </a>
         </li>
         <li>
-          <a href="/cart">
+          <a
+            onClick={() => {
+              handlePageChange('cart');
+            }}
+            className={props.activePage === 'cart' ? 'active' : ''}
+          >
             <span className="material-icons">local_shipping</span>Submit Order
           </a>
         </li>
@@ -42,12 +65,30 @@ const BurgerMenu: React.FC = () => {
           <div className="divider"></div>
         </li>
         <li>
-          <a href="/about" className="waves-effect">
+          <a
+            onClick={() => {
+              handlePageChange('about');
+            }}
+            className={
+              props.activePage === 'about'
+                ? 'waves-effect active'
+                : 'waves-effect'
+            }
+          >
             About Us
           </a>
         </li>
         <li>
-          <a href="/contact" className="waves-effect">
+          <a
+            onClick={() => {
+              handlePageChange('contact');
+            }}
+            className={
+              props.activePage === 'contact'
+                ? 'waves-effect active'
+                : 'waves-effect'
+            }
+          >
             Contact Us
           </a>
         </li>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ImageComponent from './image';
 import TextBox from './text_box';
 
 const LandingPage: React.FC = () => {
@@ -9,10 +8,6 @@ const LandingPage: React.FC = () => {
       <TextBox
         type="text"
         text="We provide top-quality vending machines for your business needs."
-      />
-      <ImageComponent
-        src={require('../images/vending_machine.png')}
-        alt="vending_machine"
       />
     </div>
   );

@@ -54,3 +54,21 @@ header > nav > .tabs.tabs-fixed-width {
     display: flex;
   }
 }
+
+.sidenav {
+  li > a {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 10px;
+    }
+  }
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+@import './components/product_advert';

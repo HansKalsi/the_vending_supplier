@@ -1,16 +1,12 @@
 import React from 'react';
-import BaseHeader from './structure/base_header';
+import ShoppingCart from '../cta/shopping_cart';
 
 const CartPage: React.FC = () => {
   return (
     <div>
-      <BaseHeader />
-      {/* Main Content */}
       <main>
-        {/* Add your main content here */}
-        <div>CART</div>
+        <ShoppingCart />
       </main>
-
       {/* Footer */}
       <footer>{/* Add your footer content here */}</footer>
     </div>
