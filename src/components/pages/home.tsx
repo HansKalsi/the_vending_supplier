@@ -1,6 +1,6 @@
 import React from 'react';
 import LandingPage from '../landing_page';
-import BaseHeader from './base_header';
+import BaseHeader from './structure/base_header';
 
 const HomePage: React.FC = () => {
   return (

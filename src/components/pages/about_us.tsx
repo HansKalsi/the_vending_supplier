@@ -1,5 +1,5 @@
 import React from 'react';
-import BaseHeader from './base_header';
+import BaseHeader from './structure/base_header';
 
 const AboutUsPage: React.FC = () => {
   return (
