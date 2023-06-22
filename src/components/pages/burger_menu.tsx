@@ -42,12 +42,12 @@ const BurgerMenu: React.FC = () => {
           <div className="divider"></div>
         </li>
         <li>
-          <a href="/about-us" className="waves-effect">
+          <a href="/about" className="waves-effect">
             About Us
           </a>
         </li>
         <li>
-          <a href="/contact-us" className="waves-effect">
+          <a href="/contact" className="waves-effect">
             Contact Us
           </a>
         </li>
