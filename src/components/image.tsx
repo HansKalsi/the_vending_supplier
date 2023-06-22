@@ -12,19 +12,19 @@ const useImage = (src: string) => {
   useEffect(() => {
     const image = new Image();
     image.onload = () => {
-        setIsLoading(false);
+      setIsLoading(false);
     };
-    image.onerror = (e) => {
-        setIsLoading(false);
-        setError('Failed to load image');
+    image.onerror = e => {
+      setIsLoading(false);
+      setError('Failed to load image');
     };
     image.src = src;
 
     return () => {
-        // Clean up the image object
-        image.onload = null;
-        image.onerror = null;
-        image.src = '';
+      // Clean up the image object
+      image.onload = null;
+      image.onerror = null;
+      image.src = '';
     };
   }, [src]);
 

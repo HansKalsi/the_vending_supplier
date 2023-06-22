@@ -18,7 +18,7 @@
     font-size: 1.2rem;
   }
 }
-  
+
 .image {
   /* Your image styles here */
 }
@@ -36,10 +36,21 @@ footer {
   min-height: 10vh;
 }
 
-html, body {
+html,
+body {
   margin: 0;
 }
 
 #root {
   overflow: hidden;
+}
+
+header > nav > .tabs.tabs-fixed-width {
+  display: none;
+  height: inherit;
+  align-items: center;
+
+  @media screen and (min-width: 993px) {
+    display: flex;
+  }
 }

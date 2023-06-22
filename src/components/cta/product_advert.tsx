@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react';
 
-export const ProductAdvert: React.FC = () =>{
-    return (
-        <></>
-    );
-}
+export const ProductAdvert: React.FC = () => {
+  return <></>;
+};
 
 export default ProductAdvert;

@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react';
 
-export const AddToCartButton: React.FC = () =>{
-    return (
-        <></>
-    );
-}
+export const AddToCartButton: React.FC = () => {
+  return <></>;
+};
 
 export default AddToCartButton;
