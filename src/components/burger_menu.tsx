@@ -21,16 +21,6 @@ const BurgerMenu: React.FC = () => {
       <div>
         <nav>
           <ul id="slide-out" className="sidenav">
-            {/* <li>
-              <div className="user-view">
-                <div className="background">
-                  <img src={require("../images/vending_machine.png").default}/>
-                </div>
-                <a href="#user"><img className="circle" src={require("../images/vending_machine.jpg").default}/></a>
-                <a href="#name"><span className="white-text name">John Doe</span></a>
-                <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
-              </div>
-            </li> */}
             <li><a className="subheader">The Vending Supplier</a></li>
             <li><a href="/"><span className="material-icons">home</span>Homepage</a></li>
             <li><a href="/shop"><span className="material-icons">shopping_cart</span>Browse Shop</a></li>

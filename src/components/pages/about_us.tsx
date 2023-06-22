@@ -1,15 +1,10 @@
 import React from 'react';
-import BurgerMenu from '../burger_menu';
+import BaseHeader from './base_header';
 
 const AboutUsPage: React.FC = () => {
     return (
         <div>
-            {/* Header */}
-            <header>
-                {/* Add your header content here */}
-                <BurgerMenu/>
-            </header>
-
+            <BaseHeader/>
             {/* Main Content */}
             <main>
                 {/* Add your main content here */}
