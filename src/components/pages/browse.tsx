@@ -36,9 +36,6 @@ const BrowsePage: React.FC = () => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer>{/* Add your footer content here */}</footer>
     </div>
   );
 };

@@ -7,9 +7,6 @@ const HomePage: React.FC = () => {
       <main>
         <LandingPage />
       </main>
-
-      {/* Footer */}
-      <footer>{/* Add your footer content here */}</footer>
     </div>
   );
 };

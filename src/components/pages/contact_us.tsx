@@ -6,9 +6,6 @@ const ContactUsPage: React.FC = () => {
       <main>
         <div>Contact Us</div>
       </main>
-
-      {/* Footer */}
-      <footer>{/* Add your footer content here */}</footer>
     </div>
   );
 };
