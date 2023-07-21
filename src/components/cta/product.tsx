@@ -8,5 +8,3 @@ export const Product: React.FC<{ product_title: string }> = props => {
     </div>
   );
 };
-
-export default Product;

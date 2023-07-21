@@ -2,7 +2,8 @@
 
 .container {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 80px;
+  margin-bottom: 50px;
 
   h1 {
     font-size: 2.5rem;
@@ -126,6 +127,10 @@ header > nav > .tabs.tabs-fixed-width {
 .btn {
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+.product_page_prompt {
+  text-align: center;
 }
 
 @import './components/product_advert';

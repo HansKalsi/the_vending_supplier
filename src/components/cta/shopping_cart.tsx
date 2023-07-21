@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { CartBasketContext } from '../contexts';
-import Product from './product';
+import { Product } from './product';
 
 export const ShoppingCart: React.FC = () => {
   const { cartBasket } = useContext(CartBasketContext);

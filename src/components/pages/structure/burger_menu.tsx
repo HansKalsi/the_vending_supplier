@@ -1,23 +1,39 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { CurrentPageContext } from '../../contexts';
 
 const BurgerMenu: React.FC = () => {
-  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
   const [M, setM] = useState((window as any).M);
+  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+
+  const sidenavInstanceRef = useRef<any>(null);
 
   useEffect(() => {
     // Initialize the sidenav
     const sidenavElement = document.querySelector('.sidenav');
-    M.Sidenav.init(sidenavElement);
+    const instance = M.Sidenav.init(sidenavElement);
+    sidenavInstanceRef.current = instance;
 
     // Clean up the sidenav instance when the component is unmounted
     return () => {
-      const instance = M.Sidenav.getInstance(sidenavElement);
-      if (instance) {
-        instance.destroy();
+      if (sidenavInstanceRef.current) {
+        sidenavInstanceRef.current.destroy();
       }
     };
   }, []);
+
+  useEffect(() => {
+    // Change the active link whenever the currentPage changes
+    if (sidenavInstanceRef.current) {
+      const links = sidenavInstanceRef.current.el.querySelectorAll('a');
+      for (const link of links) {
+        if (link.href.endsWith(`/${currentPage}`)) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+    }
+  }, [currentPage]);
 
   return (
     <>
@@ -30,7 +46,9 @@ const BurgerMenu: React.FC = () => {
             onClick={() => {
               setCurrentPage('home');
             }}
-            className={currentPage === '' ? 'active' : ''}
+            className={
+              currentPage === 'home' ? 'waves-effect active' : 'waves-effect'
+            }
           >
             <span className="material-icons">home</span>Homepage
           </a>
@@ -40,7 +58,9 @@ const BurgerMenu: React.FC = () => {
             onClick={() => {
               setCurrentPage('browse');
             }}
-            className={currentPage === 'shop' ? 'active' : ''}
+            className={
+              currentPage === 'browse' ? 'waves-effect active' : 'waves-effect'
+            }
           >
             <span className="material-icons">shopping_cart</span>Browse Shop
           </a>
@@ -50,7 +70,9 @@ const BurgerMenu: React.FC = () => {
             onClick={() => {
               setCurrentPage('cart');
             }}
-            className={currentPage === 'cart' ? 'active' : ''}
+            className={
+              currentPage === 'cart' ? 'waves-effect active' : 'waves-effect'
+            }
           >
             <span className="material-icons">local_shipping</span>Submit Order
           </a>
