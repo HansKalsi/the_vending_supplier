@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Page } from '../../../App';
+import React, { useContext, useEffect, useState } from 'react';
+import { CurrentPageContext } from '../../contexts';
 
-const DesktopNav: React.FC<{
-  activePage: string;
-  setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;
-}> = props => {
+const DesktopNav: React.FC = () => {
+  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
   const [M, setM] = useState((window as any).M);
 
   useEffect(() => {
@@ -21,18 +19,14 @@ const DesktopNav: React.FC<{
     };
   }, []);
 
-  const handlePageChange = (page: Page): void => {
-    props.setCurrentPage(page);
-  };
-
   return (
     <ul className="tabs tabs-fixed-width">
       <li className="tab">
         <a
           onClick={() => {
-            handlePageChange('home');
+            setCurrentPage('home');
           }}
-          className={props.activePage === '' ? 'active' : ''}
+          className={currentPage === '' ? 'active' : ''}
         >
           Home
         </a>
@@ -40,9 +34,9 @@ const DesktopNav: React.FC<{
       <li className="tab">
         <a
           onClick={() => {
-            handlePageChange('about');
+            setCurrentPage('about');
           }}
-          className={props.activePage === 'about' ? 'active' : ''}
+          className={currentPage === 'about' ? 'active' : ''}
         >
           About Us
         </a>
@@ -50,9 +44,9 @@ const DesktopNav: React.FC<{
       <li className="tab">
         <a
           onClick={() => {
-            handlePageChange('contact');
+            setCurrentPage('contact');
           }}
-          className={props.activePage === 'contact' ? 'active' : ''}
+          className={currentPage === 'contact' ? 'active' : ''}
         >
           Contact Us
         </a>
@@ -60,9 +54,9 @@ const DesktopNav: React.FC<{
       <li className="tab">
         <a
           onClick={() => {
-            handlePageChange('browse');
+            setCurrentPage('browse');
           }}
-          className={props.activePage === 'shop' ? 'active' : ''}
+          className={currentPage === 'shop' ? 'active' : ''}
         >
           Shop
         </a>
@@ -70,9 +64,9 @@ const DesktopNav: React.FC<{
       <li className="tab">
         <a
           onClick={() => {
-            handlePageChange('cart');
+            setCurrentPage('cart');
           }}
-          className={props.activePage === 'cart' ? 'active' : ''}
+          className={currentPage === 'cart' ? 'active' : ''}
         >
           Order
         </a>

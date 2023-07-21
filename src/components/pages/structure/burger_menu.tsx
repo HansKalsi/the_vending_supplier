@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Page } from '../../../App';
+import React, { useContext, useEffect, useState } from 'react';
+import { CurrentPageContext } from '../../contexts';
 
-const BurgerMenu: React.FC<{
-  activePage: string;
-  setCurrentPage: React.Dispatch<React.SetStateAction<Page>>;
-}> = props => {
+const BurgerMenu: React.FC = () => {
+  const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
   const [M, setM] = useState((window as any).M);
 
   useEffect(() => {
@@ -21,10 +19,6 @@ const BurgerMenu: React.FC<{
     };
   }, []);
 
-  const handlePageChange = (page: Page): void => {
-    props.setCurrentPage(page);
-  };
-
   return (
     <>
       <ul id="slide-out" className="sidenav">
@@ -34,9 +28,9 @@ const BurgerMenu: React.FC<{
         <li>
           <a
             onClick={() => {
-              handlePageChange('home');
+              setCurrentPage('home');
             }}
-            className={props.activePage === '' ? 'active' : ''}
+            className={currentPage === '' ? 'active' : ''}
           >
             <span className="material-icons">home</span>Homepage
           </a>
@@ -44,9 +38,9 @@ const BurgerMenu: React.FC<{
         <li>
           <a
             onClick={() => {
-              handlePageChange('browse');
+              setCurrentPage('browse');
             }}
-            className={props.activePage === 'shop' ? 'active' : ''}
+            className={currentPage === 'shop' ? 'active' : ''}
           >
             <span className="material-icons">shopping_cart</span>Browse Shop
           </a>
@@ -54,9 +48,9 @@ const BurgerMenu: React.FC<{
         <li>
           <a
             onClick={() => {
-              handlePageChange('cart');
+              setCurrentPage('cart');
             }}
-            className={props.activePage === 'cart' ? 'active' : ''}
+            className={currentPage === 'cart' ? 'active' : ''}
           >
             <span className="material-icons">local_shipping</span>Submit Order
           </a>
@@ -67,12 +61,10 @@ const BurgerMenu: React.FC<{
         <li>
           <a
             onClick={() => {
-              handlePageChange('about');
+              setCurrentPage('about');
             }}
             className={
-              props.activePage === 'about'
-                ? 'waves-effect active'
-                : 'waves-effect'
+              currentPage === 'about' ? 'waves-effect active' : 'waves-effect'
             }
           >
             About Us
@@ -81,12 +73,10 @@ const BurgerMenu: React.FC<{
         <li>
           <a
             onClick={() => {
-              handlePageChange('contact');
+              setCurrentPage('contact');
             }}
             className={
-              props.activePage === 'contact'
-                ? 'waves-effect active'
-                : 'waves-effect'
+              currentPage === 'contact' ? 'waves-effect active' : 'waves-effect'
             }
           >
             Contact Us
