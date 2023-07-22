@@ -39,7 +39,16 @@ const BurgerMenu: React.FC = () => {
     <>
       <ul id="slide-out" className="sidenav">
         <li>
-          <a className="subheader">The Vending Supplier</a>
+          <div className="user-view">
+            <div className="background">
+              <img
+                src={require('../../../images/vending_machine_logo_example.jpeg')}
+              />
+            </div>
+          </div>
+        </li>
+        <li>
+          <a className="subheader">The Vending Suppliers</a>
         </li>
         <li>
           <a
@@ -62,7 +71,7 @@ const BurgerMenu: React.FC = () => {
               currentPage === 'browse' ? 'waves-effect active' : 'waves-effect'
             }
           >
-            <span className="material-icons">shopping_cart</span>Browse Shop
+            <span className="material-icons">shopping_cart</span>Browse Offers
           </a>
         </li>
         <li>
@@ -74,7 +83,7 @@ const BurgerMenu: React.FC = () => {
               currentPage === 'cart' ? 'waves-effect active' : 'waves-effect'
             }
           >
-            <span className="material-icons">local_shipping</span>Submit Order
+            <span className="material-icons">local_shipping</span>Place Order
           </a>
         </li>
         <li>

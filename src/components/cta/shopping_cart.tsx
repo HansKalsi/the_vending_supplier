@@ -7,8 +7,6 @@ export const ShoppingCart: React.FC = () => {
   const [M, setM] = useState((window as any).M);
   const { cartBasket } = useContext(CartBasketContext);
 
-  console.log(cartBasket);
-
   const handleOrderSubmission = () => {
     // Show the toast popup
     M.toast({
@@ -43,7 +41,13 @@ export const ShoppingCart: React.FC = () => {
       cartBasket.tubz_machine === 0 &&
       cartBasket.vending_machine === 0 ? null : (
         <div className="row center">
-          <GenericButton label="Place Order" onClick={handleOrderSubmission} />
+          <a
+            onClick={handleOrderSubmission}
+            className="waves-effect waves-light btn-large"
+          >
+            <i className="material-icons left">local_shipping</i>Place Order
+            <i className="material-icons right">local_shipping</i>
+          </a>
         </div>
       )}
     </div>

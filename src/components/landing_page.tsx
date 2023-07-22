@@ -4,7 +4,7 @@ import TextBox from './text_box';
 const LandingPage: React.FC = () => {
   return (
     <>
-      <TextBox type="title" text="Welcome to Vending Machine Supplier" />
+      <TextBox type="title" text="The Vending Suppliers" />
       <TextBox
         type="text"
         text="We provide top-quality vending machines for your business needs."

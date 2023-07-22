@@ -72,7 +72,7 @@ const DesktopNav: React.FC = () => {
           }}
           className={currentPage === 'browse' ? 'active' : ''}
         >
-          Shop
+          Browse Offers
         </a>
       </li>
       <li className="tab">
@@ -83,7 +83,7 @@ const DesktopNav: React.FC = () => {
           }}
           className={currentPage === 'cart' ? 'active' : ''}
         >
-          Order
+          Place Order
         </a>
       </li>
     </ul>
