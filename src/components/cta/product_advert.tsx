@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageComponent from '../image';
 import TextBox from '../text_box';
-import AddToCartButton from './add_to_cart_button';
+import { AddToCartButton } from './add_to_cart_button';
 
 export const ProductAdvert: React.FC<{
   img_src: string;

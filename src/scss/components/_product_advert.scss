@@ -3,9 +3,21 @@
     display: flex;
   }
 
+  .row:last-child {
+    margin-bottom: unset;
+
+    .col:last-child {
+      margin-bottom: unset;
+    }
+  }
+
   @media (max-width: 992px) {
     .row {
       flex-wrap: wrap;
+    }
+
+    .row > .col:first-child {
+      margin-bottom: 20px;
     }
 
     .col {
