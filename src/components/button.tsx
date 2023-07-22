@@ -6,7 +6,7 @@ export const GenericButton: React.FC<{
 }> = props => {
   return (
     <button
-      className="btn waves-effect waves-light"
+      className="btn waves-effect waves-light hoverable"
       type="button"
       onClick={props.onClick ? props.onClick : null}
     >

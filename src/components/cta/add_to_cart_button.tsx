@@ -45,7 +45,7 @@ export const AddToCartButton: React.FC<{ product: string }> = props => {
   return (
     <button
       onClick={handleButtonClick}
-      className="btn waves-effect waves-light"
+      className="btn waves-effect waves-light hoverable"
       type="button"
     >
       Add to Cart

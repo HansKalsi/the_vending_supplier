@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { CurrentPageContext } from '../../contexts';
+import { CartBasketContext, CurrentPageContext } from '../../contexts';
 
 const BurgerMenu: React.FC = () => {
   const [M, setM] = useState((window as any).M);
   const { currentPage, setCurrentPage } = useContext(CurrentPageContext);
+  const { cartBasket } = useContext(CartBasketContext);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const sidenavInstanceRef = useRef<any>(null);
 
@@ -35,89 +37,28 @@ const BurgerMenu: React.FC = () => {
     }
   }, [currentPage]);
 
+  useEffect(() => {
+    let newCartTotal = 0;
+    Object.values(cartBasket).forEach((value: any) => {
+      newCartTotal += value;
+    });
+    setCartTotal(newCartTotal);
+  }, [cartBasket]);
+
   return (
-    <>
-      <ul id="slide-out" className="sidenav">
-        <li>
-          <div className="user-view">
-            <div className="background">
-              <img
-                src={require('../../../images/vending_machine_logo_example.jpeg')}
-              />
-            </div>
-          </div>
-        </li>
-        <li>
-          <a className="subheader">The Vending Suppliers</a>
-        </li>
-        <li>
-          <a
-            onClick={() => {
-              setCurrentPage('home');
-            }}
-            className={
-              currentPage === 'home' ? 'waves-effect active' : 'waves-effect'
-            }
-          >
-            <span className="material-icons">home</span>Homepage
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={() => {
-              setCurrentPage('browse');
-            }}
-            className={
-              currentPage === 'browse' ? 'waves-effect active' : 'waves-effect'
-            }
-          >
-            <span className="material-icons">shopping_cart</span>Browse Offers
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={() => {
-              setCurrentPage('cart');
-            }}
-            className={
-              currentPage === 'cart' ? 'waves-effect active' : 'waves-effect'
-            }
-          >
-            <span className="material-icons">local_shipping</span>Place Order
-          </a>
-        </li>
-        <li>
-          <div className="divider"></div>
-        </li>
-        <li>
-          <a
-            onClick={() => {
-              setCurrentPage('about');
-            }}
-            className={
-              currentPage === 'about' ? 'waves-effect active' : 'waves-effect'
-            }
-          >
-            About Us
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={() => {
-              setCurrentPage('contact');
-            }}
-            className={
-              currentPage === 'contact' ? 'waves-effect active' : 'waves-effect'
-            }
-          >
-            Contact Us
-          </a>
-        </li>
-      </ul>
+    <div className="nav-wrapper">
       <a href="#" data-target="slide-out" className="sidenav-trigger">
         <i className="material-icons">menu</i>
       </a>
-    </>
+      <a
+        href="#"
+        className="right sidenav-trigger"
+        onClick={() => setCurrentPage('cart')}
+      >
+        <i className="material-icons">local_shipping</i>
+        <p className="order_number">{cartTotal}</p>
+      </a>
+    </div>
   );
 };
 

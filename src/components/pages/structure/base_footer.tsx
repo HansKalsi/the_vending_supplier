@@ -2,33 +2,37 @@ import React from 'react';
 
 const BaseFooter: React.FC<{}> = props => {
   return (
-    <footer>
-      <div className="business_logo">
+    <footer className="row valign-wrapper">
+      <div className="business_logo col s12 l3">
         <img
           src={require('../../../images/vending_machine_logo_example.jpeg')}
         />
       </div>
-      <div className="business_details">
-        <h5>Business details to be added here.</h5>
-        <p>
-          Business email:{' '}
-          <a href="mailto:business_email@example.com">
-            business_email@example.com
-          </a>
-        </p>
+      <div className="business_details col s12 l6 center">
+        <div className="row">
+          <h5>Business details to be added here.</h5>
+          <p>
+            Business email:{' '}
+            <a className="hoverable" href="mailto:Info@thevendingsuppliers.com">
+              Info@thevendingsuppliers.com
+            </a>
+          </p>
+          <p>
+            Business telephone:{' '}
+            <a className="hoverable" href="tel:+447933 028440">
+              07933 028440
+            </a>
+          </p>
+        </div>
       </div>
-      <div className="socials">
-        <a className="waves-effect waves-light btn-floating social facebook">
-          <i className="fa fa-facebook" />
-        </a>
-        <a className="waves-effect waves-light btn-floating social instagram">
-          <i className="fa fa-instagram" />
-        </a>
-        <a className="waves-effect waves-light btn-floating social linkedin">
-          <i className="fa fa-linkedin" />
-        </a>
-        <a className="waves-effect waves-light btn-floating social twitter">
-          <i className="fa fa-twitter" />
+      <div className="col s12 l3 center-align">
+        {/* ToDo: update this to be an auto follow button via the facebook developer console (requires access to the facebook account/developer side of it) */}
+        <a
+          className="hoverable waves-effect waves-light btn social facebook"
+          target="_blank"
+          href="https://www.facebook.com/profile.php?id=100093327143056"
+        >
+          <i className="fa fa-facebook"></i>Follow us on facebook
         </a>
       </div>
     </footer>

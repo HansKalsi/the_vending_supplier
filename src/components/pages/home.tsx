@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       <main>
         <div className="container">
           <LandingPage />
-          <ProductPagePrompt />
+          <ProductPagePrompt label="Explore our collection now!" />
         </div>
       </main>
     </div>

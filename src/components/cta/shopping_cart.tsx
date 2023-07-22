@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { GenericButton } from '../button';
 import { CartBasketContext } from '../contexts';
 import { Product } from './product';
+import { ProductPagePrompt } from './product_page_prompt';
 
 export const ShoppingCart: React.FC = () => {
   const [M, setM] = useState((window as any).M);
@@ -22,6 +22,7 @@ export const ShoppingCart: React.FC = () => {
       cartBasket.vending_machine === 0 ? (
         <div className="col s12 center">
           <h3>Your cart is empty</h3>
+          <ProductPagePrompt label="Have a look at what's on offer" />
         </div>
       ) : (
         Object.entries(cartBasket).map((cart_item: any, index) => {
@@ -43,7 +44,7 @@ export const ShoppingCart: React.FC = () => {
         <div className="row center">
           <a
             onClick={handleOrderSubmission}
-            className="waves-effect waves-light btn-large"
+            className="waves-effect waves-light btn-large hoverable"
           >
             <i className="material-icons left">local_shipping</i>Place Order
             <i className="material-icons right">local_shipping</i>

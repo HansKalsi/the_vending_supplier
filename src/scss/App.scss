@@ -33,16 +33,13 @@
 }
 
 footer {
-  display: flex;
   background-color: paleturquoise;
   flex-direction: column;
-  max-height: 300px;
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: dotted 1px red;
   border-bottom: dotted 1px red;
   @media screen and (min-width: 993px) {
-    height: 100px;
     flex-direction: row;
     padding-top: unset;
     padding-bottom: unset;
@@ -58,39 +55,13 @@ footer {
   .business_logo {
     display: flex;
     justify-content: center;
-    height: 100px;
-    @media screen and (min-width: 993px) {
-      width: 20%;
-      height: auto;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    img {
-      height: 100%;
-    }
+    height: 150px;
   }
 
   .business_details {
-    @media screen and (min-width: 993px) {
-      width: 50%;
-    }
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
     img {
       max-height: 150px;
     }
-  }
-
-  .socials {
-    @media screen and (min-width: 993px) {
-      width: 30%;
-    }
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
   }
 }
 
@@ -146,6 +117,14 @@ header > nav > .tabs.tabs-fixed-width {
       width: 100%;
     }
   }
+}
+
+.order_number {
+  position: absolute;
+  margin: 0;
+  bottom: 10px;
+  left: 20px;
+  font-size: 20px;
 }
 
 @import './components/product_advert';

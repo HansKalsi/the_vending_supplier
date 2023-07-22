@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GenericButton } from '../button';
 import { CurrentPageContext } from '../contexts';
 
-export const ProductPagePrompt: React.FC = () => {
+export const ProductPagePrompt: React.FC<{ label: string }> = props => {
   const { setCurrentPage } = useContext(CurrentPageContext);
 
   const handleOnClick = () => {
@@ -11,10 +11,7 @@ export const ProductPagePrompt: React.FC = () => {
 
   return (
     <div className="product_page_prompt">
-      <GenericButton
-        label="Have a look at what's on offer"
-        onClick={handleOnClick}
-      />
+      <GenericButton label={props.label} onClick={handleOnClick} />
     </div>
   );
 };

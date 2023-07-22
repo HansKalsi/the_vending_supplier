@@ -7,10 +7,11 @@ const ContactUsPage: React.FC = () => {
         <div className="container">
           <h1>Contact Us</h1>
           <p>
-            If you wish to contact us with any business enquires please use the
-            corresponding email or drop us a message via any of the social links
-            in the footer below.
-          </p>
+            For all business inquiries, feel free to get in touch with us using
+            the contact details provided in the footer below. You can also reach
+            out to us via Facebook.
+          </p>{' '}
+          <p>We look forward to hearing from you!</p>
         </div>
       </main>
     </div>
