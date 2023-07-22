@@ -13,7 +13,11 @@ import BaseHeader from './components/pages/structure/base_header';
 import BaseFooter from './components/pages/structure/base_footer';
 
 const App: React.FC = () => {
-  const [cartBasket, updateCartBasket] = useState<any[]>([]);
+  const [cartBasket, updateCartBasket] = useState<any>({
+    coffee_machine: 0,
+    tubz_machine: 0,
+    vending_machine: 0,
+  });
   const [currentPage, setCurrentPage] = useState('home');
 
   const renderPage = (): JSX.Element | null => {

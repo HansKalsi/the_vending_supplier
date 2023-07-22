@@ -9,7 +9,28 @@ export const AddToCartButton: React.FC<{ product: string }> = props => {
   useEffect(() => {
     if (buttonClicked) {
       // Perform any actions you want when the button is clicked
-      updateCartBasket([...cartBasket, props.product]);
+      switch (props.product) {
+        case 'Coffee Machine':
+          updateCartBasket({
+            ...cartBasket,
+            coffee_machine: cartBasket.coffee_machine + 1,
+          });
+          break;
+        case 'Tubz Vending Machine':
+          updateCartBasket({
+            ...cartBasket,
+            tubz_machine: cartBasket.tubz_machine + 1,
+          });
+          break;
+        case 'Vending Machine':
+          updateCartBasket({
+            ...cartBasket,
+            vending_machine: cartBasket.vending_machine + 1,
+          });
+          break;
+        default:
+          break;
+      }
       // Show the toast popup
       M.toast({ html: `${props.product} added to cart!`, classes: 'green' });
       // Reset the buttonClicked state if needed
