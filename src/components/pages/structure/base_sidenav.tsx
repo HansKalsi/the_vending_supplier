@@ -9,9 +9,7 @@ const SidenavMenu: React.FC = () => {
       <li>
         <div className="user-view">
           <div className="background">
-            <img
-              src={require('../../../images/vending_machine_logo_example.jpeg')}
-            />
+            <img src={require('../../../images/TheVendingSuppliersLogo.png')} />
           </div>
         </div>
       </li>

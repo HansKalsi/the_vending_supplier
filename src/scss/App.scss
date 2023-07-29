@@ -111,10 +111,9 @@ header > nav > .tabs.tabs-fixed-width {
 .user-view {
   min-height: 100px;
   .background {
+    text-align: center;
     img {
-      object-fit: cover;
       height: 100%;
-      width: 100%;
     }
   }
 }

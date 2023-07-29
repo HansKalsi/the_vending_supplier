@@ -4,9 +4,7 @@ const BaseFooter: React.FC<{}> = props => {
   return (
     <footer className="row valign-wrapper">
       <div className="business_logo col s12 l3">
-        <img
-          src={require('../../../images/vending_machine_logo_example.jpeg')}
-        />
+        <img src={require('../../../images/TheVendingSuppliersLogo.png')} />
       </div>
       <div className="business_details col s12 l6 center">
         <div className="row">
