@@ -12,7 +12,7 @@ const BaseFooter: React.FC<{}> = props => {
           <p>
             Business email:{' '}
             <a className="hoverable" href="mailto:Info@thevendingsuppliers.com">
-              Info@thevendingsuppliers.com
+              info@thevendingsuppliers.com
             </a>
           </p>
           <p>
