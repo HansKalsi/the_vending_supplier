@@ -126,5 +126,11 @@ header > nav > .tabs.tabs-fixed-width {
   font-size: 20px;
 }
 
+.nav-wrapper {
+  @media screen and (min-width: 993px) {
+    display: none;
+  }
+}
+
 @import './components/product_advert';
 @import './components/product_cart';
