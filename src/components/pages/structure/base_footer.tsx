@@ -8,7 +8,7 @@ const BaseFooter: React.FC<{}> = props => {
       </div>
       <div className="business_details col s12 l6 center">
         <div className="row">
-          <h5>Business details to be added here.</h5>
+          <h5>Business details:</h5>
           <p>
             Business email:{' '}
             <a className="hoverable" href="mailto:Info@thevendingsuppliers.com">

@@ -1,19 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { CartBasketContext } from '../contexts';
+import { ContactModal } from '../modal/contact_modal';
 import { Product } from './product';
 import { ProductPagePrompt } from './product_page_prompt';
 
 export const ShoppingCart: React.FC = () => {
-  const [M, setM] = useState((window as any).M);
   const { cartBasket } = useContext(CartBasketContext);
-
-  const handleOrderSubmission = () => {
-    // Show the toast popup
-    M.toast({
-      html: 'Order has been placed! (placeholder notification)',
-      classes: 'blue',
-    });
-  };
 
   return (
     <div className="col s12">
@@ -26,7 +18,6 @@ export const ShoppingCart: React.FC = () => {
         </div>
       ) : (
         Object.entries(cartBasket).map((cart_item: any, index) => {
-          console.log(cart_item, index);
           if (cart_item[1] > 0) {
             return (
               <Product
@@ -41,15 +32,18 @@ export const ShoppingCart: React.FC = () => {
       {cartBasket.coffee_machine === 0 &&
       cartBasket.tubz_machine === 0 &&
       cartBasket.vending_machine === 0 ? null : (
-        <div className="row center">
-          <a
-            onClick={handleOrderSubmission}
-            className="waves-effect waves-light btn-large hoverable"
-          >
-            <i className="material-icons left">local_shipping</i>Place Order
-            <i className="material-icons right">local_shipping</i>
-          </a>
-        </div>
+        <>
+          <div className="row center">
+            <a
+              className="waves-effect waves-light btn-large hoverable modal-trigger"
+              href="#contact_modal"
+            >
+              <i className="material-icons left">local_shipping</i>Place Order
+              <i className="material-icons right">local_shipping</i>
+            </a>
+          </div>
+          <ContactModal />
+        </>
       )}
     </div>
   );
