@@ -38,7 +38,7 @@ export const ShoppingCart: React.FC = () => {
               className="waves-effect waves-light btn-large hoverable modal-trigger"
               href="#contact_modal"
             >
-              <i className="material-icons left">local_shipping</i>Place Order
+              <i className="material-icons left">local_shipping</i>Send Enqiury
               <i className="material-icons right">local_shipping</i>
             </a>
           </div>

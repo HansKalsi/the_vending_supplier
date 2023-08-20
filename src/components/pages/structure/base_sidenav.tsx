@@ -49,7 +49,7 @@ const SidenavMenu: React.FC = () => {
             currentPage === 'cart' ? 'waves-effect active' : 'waves-effect'
           }
         >
-          <span className="material-icons">local_shipping</span>Place Order
+          <span className="material-icons">local_shipping</span>Send Enqiury
         </a>
       </li>
       <li>

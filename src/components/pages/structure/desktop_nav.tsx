@@ -83,7 +83,7 @@ const DesktopNav: React.FC = () => {
           }}
           className={currentPage === 'cart' ? 'active' : ''}
         >
-          Place Order
+          Send Enqiury
         </a>
       </li>
     </ul>
