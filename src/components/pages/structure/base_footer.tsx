@@ -12,13 +12,13 @@ const BaseFooter: React.FC<{}> = props => {
           <p>
             Business email:{' '}
             <a className="hoverable" href="mailto:Info@thevendingsuppliers.com">
-              info@thevendingsuppliers.com
+              email@example.com
             </a>
           </p>
           <p>
             Business telephone:{' '}
-            <a className="hoverable" href="tel:+447933 028440">
-              07933 028440
+            <a className="hoverable" href="tel:+000000 000000">
+              000000 000000
             </a>
           </p>
         </div>
@@ -28,7 +28,7 @@ const BaseFooter: React.FC<{}> = props => {
         <a
           className="hoverable waves-effect waves-light btn social facebook"
           target="_blank"
-          href="https://www.facebook.com/profile.php?id=100093327143056"
+          href="https://www.facebook.com/profile.php?id=000000000000000"
         >
           <i className="fa fa-facebook"></i>Follow us on facebook
         </a>
